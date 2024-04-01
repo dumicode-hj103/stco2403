@@ -803,6 +803,7 @@
     <link rel="stylesheet" type="text/css" href="https://m.stco.co.kr/Areas/Mobile/Common/css/review_m.css">
     <link rel="stylesheet" type="text/css" href="https://m.stco.co.kr/Areas/Mobile/Common/css/detail_mob.css" />
     <div id="container" class="product_container review_container m_product_container mobile">
+
       <!-- =============================     dumicode 202403 ========================================= -->
       <link rel="stylesheet" type="text/css" href="../css/common_prodDetail_202403.css" />
       <link rel="stylesheet" type="text/css" href="../css/swiper-bundle.min.css" />
@@ -830,56 +831,51 @@
                 </div>
               </div>
             </div>
-            <ul class="swpMainVisualThumbs">
-              <li class="on">
-                <a href="#" class="img" style="background-image: url(../images/img_main_visual_01.jpg);"></a>
-              </li>
-              <li>
-                <a href="#" class="img" style="background-image: url(../images/img_main_visual_01.jpg);"></a>
-              </li>
-              <li>
-                <a href="#" class="img" style="background-image: url(../images/img_main_visual_01.jpg);"></a>
-              </li>
-              <li>
-                <a href="#" class="img" style="background-image: url(../images/img_main_visual_01.jpg);"></a>
-              </li>
-              <li>
-                <a href="#" class="img" style="background-image: url(../images/img_main_visual_01.jpg);"></a>
-              </li>
-            </ul>
+            <div class="swiper-container swpMainVisualThumbs">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="#" class="img" style="background-image: url(../images/img_main_visual_01.jpg);"></a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="img" style="background-image: url(../images/img_main_visual_01.jpg);"></a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="img" style="background-image: url(../images/img_main_visual_01.jpg);"></a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="img" style="background-image: url(../images/img_main_visual_01.jpg);"></a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="img" style="background-image: url(../images/img_main_visual_01.jpg);"></a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="#" class="img" style="background-image: url(../images/img_main_visual_01.jpg);"></a>
+                </div>
+              </div>
+            </div>
 
             <script>
-              var thumbs = $('.swpMainVisualThumbs li');
-              $(document).ready(function() {
+              $(document).ready(function () {
+                var swpMainVisualThumbs = new Swiper('.swpMainVisualThumbs', {
+                  freeMode: true,
+                  spaceBetween: 1,
+                  slidesPerView: 5,
+                  watchSlidesProgress: true,
+                });
+
                 var swpMainVisual = new Swiper('.swpMainVisual', {
-                  loop:true,
+                  loop: true,
                   speed: 800,
-                  autoplay: 5000,  
-                  on: {
-                    slideChangeTransitionStart: function () {
-                      updateThumbs(this.realIndex);
-                    }
+                  autoplay: 5000,
+                  thumbs: {
+                    swiper: swpMainVisualThumbs
                   }
                 });
-                
-                // 썸네일 업데이트 함수
-                function updateThumbs(activeIndex) {
-                  thumbs.removeClass('on'); 
-                  thumbs.eq(activeIndex).addClass('on'); 
-                }
 
-                // 썸네일에 클릭 이벤트 바인딩
-                thumbs.on('click', function () {
-                  var index = thumbs.index(this); 
-                  swpMainVisual.slideTo(index+1); 
-                  return false;
-                });
+                
               });
-              
+
             </script>
-          </div>
-          <div class="bindBox">
-            <h3 class="titBind">타임특가 종료 </h3>
           </div>
           <div class="dDayBox">
             <h3 class="titDDay">타임특가 종료 </h3>
@@ -895,15 +891,15 @@
               <p class="pricePer">20%</p>
               <p class="shippingType">온라인 배송</p>
             </div>
-            <div class="discountBox">
+            <!-- <div class="discountBox">
               <h3 class="titDiscount">묶음 할인 상품</h3>
               <p class="txtDiscount">
-                2장 이상 구매시 <span class="colorRed">장당 4,000원 할인</span> 
+                2장 이상 구매시 <span class="colorRed">장당 4,000원 할인</span>
                 <br>
                 <br>- 묶음 할인 혜택은 <span class="colorBlue">장바구니/결제 단계에서 자동 적용</span>됩니다.
                 <br>- 네이버 체크아웃은 묶음 할인 혜택이 적용되지 않습니다.
               </p>
-            </div>
+            </div> -->
             <div class="discountBoxStyle2">
               <h3 class="titDiscount">묶음 할인 상품</h3>
               <h3 class="titDiscountStyle2"><span class="light">2장 이상 구매시</span> <span class="colorRed">장당 4,000원 할인</span></h3>
@@ -911,7 +907,7 @@
                 <br>- 묶음 할인 혜택은 <span class="colorBlue">장바구니/결제 단계에서 자동 적용</span>됩니다.
                 <br>- 네이버 체크아웃은 묶음 할인 혜택이 적용되지 않습니다.
               </p>
-              <a href="#" class="btnDiscount">묶음할인 가능한 상품 모두 보기</a>
+              <a href="javascript:void(0);" class="btnDiscount">묶음할인 가능한 상품 모두 보기</a>
             </div>
             <p class="prodIntro">
               가장 많이 활용하는 베지직 라운드 티셔츠 2장 묶음 PACK 구성 입니다.면 100% 소재로 소프트한 터치감의 코마사 사용하였습니다.
@@ -927,198 +923,242 @@
                   <p class="txtProdInfo">클래식핏</p>
                 </li>
               </ul>
-              <a href="#" class="btnProdInfoMore">상품정보 더보기</a>
+              <a href="#prodInfo" class="btnProdInfoMore">상품정보 더보기</a>
             </div>
-            <div class="optionBox">
-              <ul class="listOption">
-                <li>
-                  <h3 class="titOption">사이즈</h3>
-                  <div class="option">
-                    <div class="sizeBox">
-                      <div class="size">
-                        <input type="checkbox" name="size1" id="size1_1" data-name="사이즈" date-price="18900" value="95">
-                        <label for="size1_1">95</label>
+            <div class="fixedOptionBoxArea">
+              
+              <div class="fixedOptionBox" id="fixedOption">
+                <div class="optionBox">
+                  <ul class="listOption">
+                    <li>
+                      <h3 class="titOption">사이즈</h3>
+                      <div class="option">
+                        <div class="sizeBox">
+                          <div class="size">
+                            <input type="checkbox" name="size1" id="size1_1" data-name="사이즈" date-price="18900" value="95">
+                            <label for="size1_1">95</label>
+                          </div>
+                          <div class="size">
+                            <input type="checkbox" name="size1" id="size1_2" data-name="사이즈" date-price="18900" value="100">
+                            <label for="size1_2">100</label>
+                          </div>
+                          <div class="size">
+                            <input type="checkbox" name="size1" id="size1_3" data-name="사이즈" date-price="18900" value="105" disabled="">
+                            <label for="size1_3">105</label>
+                          </div>
+                          <div class="size">
+                            <input type="checkbox" name="size1" id="size1_4" data-name="사이즈" date-price="18900" value="110">
+                            <label for="size1_4">110</label>
+                          </div>
+                        </div>
                       </div>
-                      <div class="size">
-                        <input type="checkbox" name="size1" id="size1_2" data-name="사이즈" date-price="18900" value="100">
-                        <label for="size1_2">100</label>
+                    </li>
+                    <li>
+                      <h3 class="titOption">팬츠</h3>
+                      <div class="option">
+                        <div class="sizeBox">
+                          <div class="size">
+                            <input type="checkbox" name="size2" id="size2_1" data-name="팬츠" date-price="29900" value="74">
+                            <label for="size2_1">74</label>
+                          </div>
+                          <div class="size">
+                            <input type="checkbox" name="size2" id="size2_2" data-name="팬츠" date-price="29900" value="78">
+                            <label for="size2_2">78</label>
+                          </div>
+                          <div class="size">
+                            <input type="checkbox" name="size2" id="size2_3" data-name="팬츠" date-price="29900" value="82">
+                            <label for="size2_3">82</label>
+                          </div>
+                          <div class="size">
+                            <input type="checkbox" name="size2" id="size2_4" data-name="팬츠" date-price="29900" value="84">
+                            <label for="size2_4">84</label>
+                          </div>
+                          <div class="size">
+                            <input type="checkbox" name="size2" id="size2_5" data-name="팬츠" date-price="29900" value="86">
+                            <label for="size2_5">86</label>
+                          </div>
+                          <div class="size">
+                            <input type="checkbox" name="size2" id="size2_6" data-name="팬츠" date-price="29900" value="88">
+                            <label for="size2_6">88</label>
+                          </div>
+                          <div class="size">
+                            <input type="checkbox" name="size2" id="size2_7" data-name="팬츠" date-price="29900" value="90">
+                            <label for="size2_7">90</label>
+                          </div>
+                          <div class="size">
+                            <input type="checkbox" name="size2" id="size2_8" data-name="팬츠" date-price="29900" value="94">
+                            <label for="size2_8">94</label>
+                          </div>
+                          <div class="size">
+                            <input type="checkbox" name="size2" id="size2_9" data-name="팬츠" date-price="29900" value="98">
+                            <label for="size2_9">98</label>
+                          </div>
+                          <div class="size">
+                            <input type="checkbox" name="size2" id="size2_10" data-name="팬츠" date-price="29900" value="102">
+                            <label for="size2_10">102</label>
+                          </div>
+                        </div>
                       </div>
-                      <div class="size">
-                        <input type="checkbox" name="size1" id="size1_3" data-name="사이즈" date-price="18900" value="105" disabled="">
-                        <label for="size1_3">105</label>
+                    </li>
+                  </ul>
+                  <ul class="listOptionDetail">
+                    <!-- <li>
+                      <div class="optionDetailBox">
+                        <h3 class="titOptionDetail">사이즈 - 100</h3>
+                        <div class="numBox">
+                          <button class="btnDown">-</button>
+                          <input type="text" class="textNum" value="2"/>
+                          <button class="btnUp">+</button>
+                        </div>
+                        <p class="txtPrice">29900원</p>
+                        <button class="btnDel"></button>
                       </div>
-                      <div class="size">
-                        <input type="checkbox" name="size1" id="size1_4" data-name="사이즈" date-price="18900" value="110">
-                        <label for="size1_4">110</label>
-                      </div>
-                    </div>
+                    </li> -->
+                  </ul>
+                  <div class="totalPriceBox">
+                    <h3 class="titTotalPrice">총 상품금액</h3>
+                    <p class="txtTotalPrice">0원</p>
                   </div>
-                </li>
-                <li>
-                  <h3 class="titOption">팬츠</h3>
-                  <div class="option">
-                    <div class="sizeBox">
-                      <div class="size">
-                        <input type="checkbox" name="size2" id="size2_1" data-name="팬츠" date-price="29900" value="74">
-                        <label for="size2_1">74</label>
-                      </div>
-                      <div class="size">
-                        <input type="checkbox" name="size2" id="size2_2" data-name="팬츠" date-price="29900" value="78">
-                        <label for="size2_2">78</label>
-                      </div>
-                      <div class="size">
-                        <input type="checkbox" name="size2" id="size2_3" data-name="팬츠" date-price="29900" value="82">
-                        <label for="size2_3">82</label>
-                      </div>
-                      <div class="size">
-                        <input type="checkbox" name="size2" id="size2_4" data-name="팬츠" date-price="29900" value="84">
-                        <label for="size2_4">84</label>
-                      </div>
-                      <div class="size">
-                        <input type="checkbox" name="size2" id="size2_5" data-name="팬츠" date-price="29900" value="86">
-                        <label for="size2_5">86</label>
-                      </div>
-                      <div class="size">
-                        <input type="checkbox" name="size2" id="size2_6" data-name="팬츠" date-price="29900" value="88">
-                        <label for="size2_6">88</label>
-                      </div>
-                      <div class="size">
-                        <input type="checkbox" name="size2" id="size2_7" data-name="팬츠" date-price="29900" value="90">
-                        <label for="size2_7">90</label>
-                      </div>
-                      <div class="size">
-                        <input type="checkbox" name="size2" id="size2_8" data-name="팬츠" date-price="29900" value="94">
-                        <label for="size2_8">94</label>
-                      </div>
-                      <div class="size">
-                        <input type="checkbox" name="size2" id="size2_9" data-name="팬츠" date-price="29900" value="98">
-                        <label for="size2_9">98</label>
-                      </div>
-                      <div class="size">
-                        <input type="checkbox" name="size2" id="size2_10" data-name="팬츠" date-price="29900" value="102">
-                        <label for="size2_10">102</label>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <ul class="listOptionDetail">
-                <!-- <li>
-                  <div class="optionDetailBox">
-                    <h3 class="titOptionDetail">사이즈 - 100</h3>
-                    <div class="numBox">
-                      <button class="btnDown">-</button>
-                      <input type="text" class="textNum" value="2"/>
-                      <button class="btnUp">+</button>
-                    </div>
-                    <p class="txtPrice">29900원</p>
-                    <button class="btnDel"></button>
-                  </div>
-                </li> -->
-              </ul>
-              <div class="totalPriceBox">
-                <h3 class="titTotalPrice">총 상품금액</h3>
-                <p class="txtTotalPrice">0원</p>
-              </div>
-              <script>
-              $(document).ready(function() {
-                // 모든 체크박스 변경 이벤트를 감지합니다.
-                $('input[type="checkbox"]').change(function() {
-                  // 선택된 체크박스의 값, 카테고리 및 가격을 가져옵니다.
-                  var sizeValue = $(this).val();
-                  var categoryName = $(this).attr('data-name');
-                  var pricePerItem = parseInt($(this).attr('date-price'));
-
-                  // 체크박스가 선택된 경우
-                  if ($(this).is(':checked')) {
-                    // 동일한 데이터가 이미 있는지 확인합니다.
-                    if($('.listOptionDetail').find('.titOptionDetail:contains("' + categoryName + ' - ' + sizeValue + '")').length === 0) {
-                      // 동일한 데이터가 없으면 새로운 데이터를 추가합니다.
-                      $('.listOptionDetail').append(
-                        '<li>' +
-                          '<div class="optionDetailBox">' +
-                            '<h3 class="titOptionDetail">' + categoryName + ' - ' + sizeValue + '</h3>' +
-                            '<div class="numBox">' +
+                  <script>
+                    $(document).ready(function () {
+                      // 모든 체크박스 변경 이벤트를 감지합니다.
+                      $('.optionBox input[type="checkbox"]').change(function () {
+                        // 선택된 체크박스의 값, 카테고리 및 가격을 가져옵니다.
+                        var sizeValue = $(this).val();
+                        var categoryName = $(this).attr('data-name');
+                        var pricePerItem = parseInt($(this).attr('date-price'));
+    
+                        // 체크박스가 선택된 경우
+                        if ($(this).is(':checked')) {
+                          // 동일한 데이터가 이미 있는지 확인합니다.
+                          if ($('.listOptionDetail').find('.titOptionDetail:contains("' + categoryName + ' - ' + sizeValue + '")').length === 0) {
+                            // 동일한 데이터가 없으면 새로운 데이터를 추가합니다.
+                            $('.listOptionDetail').append(
+                              '<li>' +
+                              '<div class="optionDetailBox">' +
+                              '<h3 class="titOptionDetail">' + categoryName + ' - ' + sizeValue + '</h3>' +
+                              '<div class="numBox">' +
                               '<button class="btnDown">-</button>' +
                               '<input type="text" class="textNum" value="1"/>' +
                               '<button class="btnUp">+</button>' +
-                            '</div>' +
-                            '<p class="txtPrice" data-price="' + pricePerItem + '">' + pricePerItem.toLocaleString('ko-KR') + '원</p>' +
-                            '<button class="btnDel">삭제</button>' +
-                          '</div>' +
-                        '</li>'
-                      );
-                    }
-                  } else {
-                    // 체크박스가 선택 해제된 경우 해당 데이터를 삭제합니다.
-                    $('.listOptionDetail').find('.titOptionDetail:contains("' + categoryName + ' - ' + sizeValue + '")').closest('li').remove();
-                  }
-                  updateTotalPrice(); // 선택 후 총 상품금액을 업데이트합니다.
-                });
-
-                // 삭제 버튼 클릭 이벤트를 감지합니다 (이벤트 위임).
-                $('.listOptionDetail').on('click', '.btnDel', function() {
-                  // 현재 데이터를 삭제합니다.
-                  var categorySize = $(this).siblings('.titOptionDetail').text().split(' - ');
-                  var categoryName = categorySize[0];
-                  var sizeValue = categorySize[1];
-                  $('input[type="checkbox"][data-name="' + categoryName + '"][value="' + sizeValue + '"]').prop('checked', false);
-                  $(this).closest('li').remove();
-                  updateTotalPrice(); // 삭제 후 총 상품금액을 업데이트합니다.
-                });
-
-                // 증가 버튼 클릭 이벤트를 감지합니다.
-                $('.listOptionDetail').on('click', '.btnUp', function() {
-                  var $textNum = $(this).siblings('.textNum');
-                  var currentValue = parseInt($textNum.val());
-                  $textNum.val(currentValue + 1);
-                  updateTxtPrice($(this).closest('.optionDetailBox')); // 증가 후 txtPrice를 업데이트합니다.
-                  updateTotalPrice(); // 증가 후 총 상품금액을 업데이트합니다.
-                });
-
-                // 감소 버튼 클릭 이벤트를 감지합니다.
-                $('.listOptionDetail').on('click', '.btnDown', function() {
-                  var $textNum = $(this).siblings('.textNum');
-                  var currentValue = parseInt($textNum.val());
-                  if (currentValue > 1) {
-                    $textNum.val(currentValue - 1);
-                    updateTxtPrice($(this).closest('.optionDetailBox')); // 감소 후 txtPrice를 업데이트합니다.
-                    updateTotalPrice(); // 감소 후 총 상품금액을 업데이트합니다.
-                  }
-                });
-
-                // textNum 변경 이벤트를 감지합니다.
-                $('.listOptionDetail').on('input', '.textNum', function() {
-                  updateTxtPrice($(this).closest('.optionDetailBox')); // 변경 후 txtPrice를 업데이트합니다.
-                  updateTotalPrice(); // 변경 후 총 상품금액을 업데이트합니다.
-                });
-
-                // txtPrice 업데이트 함수를 정의합니다.
-                function updateTxtPrice($optionDetailBox) {
-                  var $txtPrice = $optionDetailBox.find('.txtPrice');
-                  var pricePerItem = parseInt($txtPrice.attr('data-price'));
-                  var quantity = parseInt($optionDetailBox.find('.textNum').val());
-                  var totalPrice = pricePerItem * quantity;
-                  $txtPrice.text(totalPrice.toLocaleString('ko-KR') + '원');
-                }
-
-                // 총 상품금액 업데이트 함수를 정의합니다.
-                function updateTotalPrice() {
-                  var total = 0;
-                  $('.txtPrice').each(function() {
-                    var priceString = $(this).text().replace('원', '').replace(',', '');
-                    var price = parseInt(priceString);
-                    total += price;
-                  });
-                  $('.txtTotalPrice').text(total.toLocaleString('ko-KR') + '원');
-                }
-              });
-              </script>
+                              '</div>' +
+                              '<p class="txtPrice" data-price="' + pricePerItem + '">' + pricePerItem.toLocaleString('ko-KR') + '원</p>' +
+                              '<button class="btnDel">삭제</button>' +
+                              '</div>' +
+                              '</li>'
+                            );
+                          }
+                        } else {
+                          // 체크박스가 선택 해제된 경우 해당 데이터를 삭제합니다.
+                          $('.listOptionDetail').find('.titOptionDetail:contains("' + categoryName + ' - ' + sizeValue + '")').closest('li').remove();
+                        }
+                        updateTotalPrice(); // 선택 후 총 상품금액을 업데이트합니다.
+                      });
+    
+                      // 삭제 버튼 클릭 이벤트를 감지합니다 (이벤트 위임).
+                      $('.listOptionDetail').on('click', '.btnDel', function () {
+                        // 현재 데이터를 삭제합니다.
+                        var categorySize = $(this).siblings('.titOptionDetail').text().split(' - ');
+                        var categoryName = categorySize[0];
+                        var sizeValue = categorySize[1];
+                        $('input[type="checkbox"][data-name="' + categoryName + '"][value="' + sizeValue + '"]').prop('checked', false);
+                        $(this).closest('li').remove();
+                        updateTotalPrice(); // 삭제 후 총 상품금액을 업데이트합니다.
+                      });
+    
+                      // 증가 버튼 클릭 이벤트를 감지합니다.
+                      $('.listOptionDetail').on('click', '.btnUp', function () {
+                        var $textNum = $(this).siblings('.textNum');
+                        var currentValue = parseInt($textNum.val());
+                        $textNum.val(currentValue + 1);
+                        updateTxtPrice($(this).closest('.optionDetailBox')); // 증가 후 txtPrice를 업데이트합니다.
+                        updateTotalPrice(); // 증가 후 총 상품금액을 업데이트합니다.
+                      });
+    
+                      // 감소 버튼 클릭 이벤트를 감지합니다.
+                      $('.listOptionDetail').on('click', '.btnDown', function () {
+                        var $textNum = $(this).siblings('.textNum');
+                        var currentValue = parseInt($textNum.val());
+                        if (currentValue > 1) {
+                          $textNum.val(currentValue - 1);
+                          updateTxtPrice($(this).closest('.optionDetailBox')); // 감소 후 txtPrice를 업데이트합니다.
+                          updateTotalPrice(); // 감소 후 총 상품금액을 업데이트합니다.
+                        }
+                      });
+    
+                      // textNum 변경 이벤트를 감지합니다.
+                      $('.listOptionDetail').on('input', '.textNum', function () {
+                        updateTxtPrice($(this).closest('.optionDetailBox')); // 변경 후 txtPrice를 업데이트합니다.
+                        updateTotalPrice(); // 변경 후 총 상품금액을 업데이트합니다.
+                      });
+    
+                      // txtPrice 업데이트 함수를 정의합니다.
+                      function updateTxtPrice($optionDetailBox) {
+                        var $txtPrice = $optionDetailBox.find('.txtPrice');
+                        var pricePerItem = parseInt($txtPrice.attr('data-price'));
+                        var quantity = parseInt($optionDetailBox.find('.textNum').val());
+                        var totalPrice = pricePerItem * quantity;
+                        $txtPrice.text(totalPrice.toLocaleString('ko-KR') + '원');
+                      }
+    
+                      // 총 상품금액 업데이트 함수를 정의합니다.
+                      function updateTotalPrice() {
+                        var total = 0;
+                        $('.txtPrice').each(function () {
+                          var priceString = $(this).text().replace('원', '').replace(',', '');
+                          var price = parseInt(priceString);
+                          total += price;
+                        });
+                        $('.txtTotalPrice').text(total.toLocaleString('ko-KR') + '원');
+                      }
+                    });
+                  </script>
+                </div>
+                <div class="btnOptionBox">
+                  <a href="#" class="btnOption style1">장바구니</a>
+                  <a href="#" class="btnOption style2">바로 구매</a>
+                </div>
+              </div>
+              <div class="fixedOptionMask"></div>
             </div>
-            <div class="btnOptionBox">
-              <a href="#" class="btnOption style1">장바구니</a>
-              <a href="#" class="btnOption style2">바로 구매</a>
+            <div class="fixedBuyBox">
+              <button onclick="$('body').addClass('openFixedOption')" class="btnFixedBuy">주문하기</button>
             </div>
+
+            <script>
+              $(function(){
+                var posBtnOptionBox = $('.btnOptionBox').offset().top;
+                $('.fixedOptionBoxArea').height(($('.fixedOptionBox').height()));
+
+                $('.fixedOptionMask').click(function(){
+                  $('body').removeClass('openFixedOption');
+                });
+                
+                $(window).scroll(function(){
+                  var headerHeight = $('.header').outerHeight();
+                  var topOfScreen = $(window).scrollTop() - headerHeight;
+
+                  if(topOfScreen > posBtnOptionBox){
+                    $('body').addClass('openFixedBuy');
+                  }else{
+                    $('body').removeClass('openFixedBuy');
+                  }
+                });
+
+                $('.btnLike.like').click(function(){
+                  var num = parseInt($(this).find('.txtBtn').html());
+                  $(this).find('.txtBtn').html(num + 1);
+                  return false;
+                });
+
+                $('.btnLike.disLike').click(function(){
+                  var num = parseInt($(this).find('.txtBtn').html());
+                  if(num == 0) return false;
+                  $(this).find('.txtBtn').html(num - 1);
+                  return false;
+                });
+              })
+            </script>
           </div>
         </div>
         <div class="prodDetailTabBox">
@@ -1127,16 +1167,16 @@
               <a href="#prodInfo" class="btnTab on" data-tab="prodInfo"><span class="txt">상품 정보</span></a>
               <a href="#ProdReview" class="btnTab" data-tab="ProdReview"><span class="txt">구매 후기 (6)</span></a>
               <a href="#ProdQA" class="btnTab" data-tab="ProdQA"><span class="txt">상품 Q&amp;A (3)</span></a>
-              <a href="#ProdShipping" class="btnTab" data-tab="ProdShipping"><span class="txt">배송/교환</span></a>
+              <a href="#ProdShipping" class="btnTab" data-tab="ProdShipping"><span class="txt">배송/교환/반품</span></a>
             </div>
           </div>
           <div class="tabContBox">
             <div id="prodInfo" class="tabCont prodInfo">
               <div class="prodInfoItem">
-                <h3 class="titProdInfo">상세설명</h3>
+                <h3 class="titProdInfo style2">편안하고 세련된 컴포트 블레이저</h3>
                 <p class="txtProdInfo">
-                  물세탁 후에 다림질 없이 툭툭 털어서 바로 입을 수 있는 보들보들한 감촉의 셔츠입니다. 
-                  우수한 스트레치성으로 편안한 착용감을 느낄 수 있고, 구김이 덜한 이지케어 제품입니다. 
+                  물세탁 후에 다림질 없이 툭툭 털어서 바로 입을 수 있는 보들보들한 감촉의 셔츠입니다.
+                  우수한 스트레치성으로 편안한 착용감을 느낄 수 있고, 구김이 덜한 이지케어 제품입니다.
                   연중 내내 기본으로 착용할 수 있는 베이직 아이템입니다.
                 </p>
                 <table class="tblStyle1">
@@ -1169,7 +1209,7 @@
                     <span class="iconMore"></span>
                   </a>
                   <script>
-                    $(function(){
+                    $(function () {
                       $('.prodInfo .imgProdBox .btnImgMore').click(function () {
                         $('.prodInfo .imgProdBox').addClass('on');
                         return false;
@@ -1247,165 +1287,11 @@
                   </li>
                 </ul>
               </div>
-              <div class="prodInfoItem">
-                <h3 class="titProdInfo">배송 / 교환 / 반품</h3>
-                <ul class="listProdSRR">
-                  <li>
-                    <div class="itemProdSRR">
-                      <a href="#" class="itemHead">배송안내</a>
-                      <div class="toggleBox">
-                        <ul class="listProdSRRDetail">
-                          <li>
-                            <h3 class="titProdSRRDetail">· 배송비 및 출고 안내</h3>
-                            <p class="txtProdSSRDetail">
-                              기본 배송비 2,500원이며, 3만원 이상 구매 시 무료배송 입니다.
-                              <br>
-                              오전 9시30분 이전 결제 시, 당일 출고됩니다. (주말, 공휴일 제외)
-                              전국 배송이 가능하며, 제주도 및 기타 산간 도서 지역은 배송기간이
-                              늘어날 수 있습니다.
-                            </p>
-                          </li>
-                          <li>
-                            <h3 class="titProdSRRDetail">· 온라인 배송 상품</h3>
-                            <p class="txtProdSSRDetail">
-                              당사 물류센터에서 바로 출고되는 상품입니다.
-                              <br>
-                              물류센터 상황에 따라 배송이 2~3영업일 정도 소요될 수 있습니다.
-                            </p>
-                          </li>
-                          <li>
-                            <h3 class="titProdSRRDetail">· 매장 배송 상품</h3>
-                            <p class="txtProdSSRDetail">
-                              당사 오프라인 매장에서 출고되는 상품입니다.
-                              <br>
-                              매장 및 재고 상황에 따라 배송이 3~5영업일 정도 소요될 수 있습니다.
-                              <br>
-                              여러 상품을 구매하신 경우, 여러 매장에서 개별 발송될 수 있습니다.
-                              <br>
-                              오프라인 매장과 동시 판매 되는 상품이므로 주문결제 완료 후
-                              상품 준비 도중 매장에서 판매 완료될 경우, 발송 지연 또는 품절이 될 수
-                              있사오니 이 점 양해 바랍니다
-                            </p>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="itemProdSRR">
-                      <a href="#" class="itemHead">취소/교환/반품/환불 안내</a>
-                      <div class="toggleBox">
-                        <ul class="listProdSRRDetail">
-                          <li>
-                            <h3 class="titProdSRRDetail">· 주문 취소 안내</h3>
-                            <p class="txtProdSSRDetail">
-                              상품 출고 전인 경우, 주문 결제 완료 된 상품은 [마이페이지 &gt; 주문/배송조회] 에서 직접 주문 취소가 가능합니다.
-                            </p>
-                          </li>
-                          <li>
-                            <h3 class="titProdSRRDetail">· 교환/반품 시 유의사항</h3>
-                            <p class="txtProdSSRDetail">
-                              단순 변심으로 인한 교환/반품을 하실 경우, 구매자 부담 왕복 배송비가 부과됩니다.
-                              <br>
-                              여러 상품을 동시에 교환/반품 하실 경우, ‘온라인 배송 상품’ 또는 ‘매장 배송 상품’ 여부와 상관없이 ‘합포장 발송’을 해주셔야 합니다.
-                              <br>
-                              아래의 경우 교환/반품이 불가합니다.
-                              <span class="dotTxt">
-                                <span class="dot">*</span>
-                                <span>최초 배송된 상품의 상태와 다를 시 (세탁, 수선 또는 착용 후 외출하신 경우)</span>
-                              </span>
-                              <span class="dotTxt">
-                                <span class="dot">*</span>
-                                <span>외부 냄새가 묻어 있는 경우 (화장품, 향수, 음식 냄새 등)</span>
-                              </span>
-                              <span class="dotTxt">
-                                <span class="dot">*</span>
-                                <span>상품의 택과 라벨, 기타 부속품 (신발 박스, 넥타이핀, 단추, 벨트 등)이 분실/훼손 된 경우</span>
-                              </span>
-                            </p>
-                          </li>
-                          <li>
-                            <h3 class="titProdSRRDetail">· 교환 안내</h3>
-                            <p class="txtProdSSRDetail">
-                              <span class="dotTxt">
-                                <span class="dot">-</span>
-                                <span>교환 신청은 상품 수령 후 14일 이내 가능합니다. </span>
-                              </span>
-                              <span class="dotTxt">
-                                <span class="dot">-</span>
-                                <span>제품 불량으로 인한 교환 시, 동일 상품 교환 접수만 가능합니다.</span>
-                              </span>
-                            </p>
-                            <p class="txtProdSSRDetail">
-                              * 접수방법
-                              <span class="dotTxt">
-                                <span class="dot">1.</span>
-                                <span>[마이페이지 &gt; 주문/배송조회] 에서 교환 신청</span>
-                              </span>
-                              <span class="dotTxt">
-                                <span class="dot">2.</span>
-                                <span>교환 비용 결제 (교환 배송비가 부과되는 경우, 결제 후 교환 접수)</span>
-                              </span>
-                              <span class="dotTxt">
-                                <span class="dot">3.</span>
-                                <span>1~3일 내 택배기사 방문 수거4. 상품 검수 후 교환 상품 배송</span>
-                              </span>
-                            </p>
-                          </li>
-                          <li>
-                            <h3 class="titProdSRRDetail">· 반품 안내</h3>
-                            <p class="txtProdSSRDetail">
-                              <span class="dotTxt">
-                                <span class="dot">-</span>
-                                <span>반품 신청은 상품 수령 후 14일 이내 가능합니다.</span>
-                              </span>
-                            </p>
-                            <p class="txtProdSSRDetail">
-                              * 접수방법
-                              <span class="dotTxt">
-                                <span class="dot">1.</span>
-                                <span>[마이페이지 &gt; 주문/배송조회] 에서 반품 신청</span>
-                              </span>
-                              <span class="dotTxt">
-                                <span class="dot">2.</span>
-                                <span>반품 비용 결제 (반품 배송비가 부과되는 경우, 결제 후 교환 접수)</span>
-                              </span>
-                              <span class="dotTxt">
-                                <span class="dot">3.</span>
-                                <span>1~3일 내 택배기사 방문 수거</span>
-                              </span>
-                              <span class="dotTxt">
-                                <span class="dot">4.</span>
-                                <span>상품 검수 후 환불 진행</span>
-                              </span>
-                            </p>
-
-                          </li>
-                          <li>
-                            <h3 class="titProdSRRDetail">· 환불 안내</h3>
-                            <p class="txtProdSSRDetail">
-                              환불은 반품 완료 처리 후, 카드사/은행 사정에 따라 2~5일 정도소요됩니다.
-                            </p>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-                <script>
-                  $(function(){
-                    $('.listProdSRR .itemProdSRR .itemHead').click(function () {
-                      $(this).parent().toggleClass('on');
-                      return false;
-                    });
-                  })
-                </script>
-              </div>
             </div>
             <div id="ProdReview" class="tabCont ProdReview">
               <div class="prodReviewBox">
                 <p class="txtReviewMileageNotice">· 리뷰 작성 시 구매금액의 <span class="colorRed">최대 2% 마일리지</span> 적립</p>
-  
+
                 <div class="noResultBox">
                   <p class="txtNoResult">작성된 리뷰가 없습니다.</p>
                 </div>
@@ -1601,7 +1487,9 @@
                               <div class="swiper-slide" role="group" aria-label="5 / 6" style="width: 375px;"><a class="img"><img src="../images/img_prodReveiw_swiper_1.jpg" alt=""></a></div>
                               <div class="swiper-slide" role="group" aria-label="6 / 6" style="width: 375px;"><a class="img"><img src="../images/img_prodReveiw_swiper_1.jpg" alt=""></a></div>
                             </div>
-                          <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span><span class="swiper-notification"
+                              aria-live="assertive" aria-atomic="true"></span>
+                          </div>
                         </div>
                         <script>
                           $(function () {
@@ -1613,7 +1501,7 @@
                             });
                           })
                         </script>
-  
+
                         <div class="txtReviewBox">
                           <p class="txtReview">
                             재질하고 디자인 좋습니다! 외출복으로도 무난합니다
@@ -1638,14 +1526,14 @@
                         </div>
                       </div>
                     </li>
-                    
+
                   </ul>
                   <a href="#" class="btnMore">
                     <span class="txtMore">더보기</span>
                     <span class="iconMore"></span>
                   </a>
                   <script>
-                    $(function(){
+                    $(function () {
                       $('.prodReviewDetail .txtReviewBox .btnToggle').click(function () {
                         $(this).parent().toggleClass('on');
                         return false;
@@ -1720,6 +1608,165 @@
                 </a>
               </div>
             </div>
+            <div id="ProdShipping" class="tabCont ProdShipping">
+              <div class="prodShippingBox">
+                <div class="prodShippingItem">
+                  <h3 class="titProdInfo">배송 / 교환 / 반품</h3>
+                  <ul class="listProdSRR">
+                    <li>
+                      <div class="itemProdSRR">
+                        <a href="#" class="itemHead">배송안내</a>
+                        <div class="toggleBox">
+                          <ul class="listProdSRRDetail">
+                            <li>
+                              <h3 class="titProdSRRDetail">· 배송비 및 출고 안내</h3>
+                              <p class="txtProdSSRDetail">
+                                기본 배송비 2,500원이며, 3만원 이상 구매 시 무료배송 입니다.
+                                <br>
+                                오전 9시30분 이전 결제 시, 당일 출고됩니다. (주말, 공휴일 제외)
+                                전국 배송이 가능하며, 제주도 및 기타 산간 도서 지역은 배송기간이
+                                늘어날 수 있습니다.
+                              </p>
+                            </li>
+                            <li>
+                              <h3 class="titProdSRRDetail">· 온라인 배송 상품</h3>
+                              <p class="txtProdSSRDetail">
+                                당사 물류센터에서 바로 출고되는 상품입니다.
+                                <br>
+                                물류센터 상황에 따라 배송이 2~3영업일 정도 소요될 수 있습니다.
+                              </p>
+                            </li>
+                            <li>
+                              <h3 class="titProdSRRDetail">· 매장 배송 상품</h3>
+                              <p class="txtProdSSRDetail">
+                                당사 오프라인 매장에서 출고되는 상품입니다.
+                                <br>
+                                매장 및 재고 상황에 따라 배송이 3~5영업일 정도 소요될 수 있습니다.
+                                <br>
+                                여러 상품을 구매하신 경우, 여러 매장에서 개별 발송될 수 있습니다.
+                                <br>
+                                오프라인 매장과 동시 판매 되는 상품이므로 주문결제 완료 후
+                                상품 준비 도중 매장에서 판매 완료될 경우, 발송 지연 또는 품절이 될 수
+                                있사오니 이 점 양해 바랍니다
+                              </p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="itemProdSRR">
+                        <a href="#" class="itemHead">취소/교환/반품/환불 안내</a>
+                        <div class="toggleBox">
+                          <ul class="listProdSRRDetail">
+                            <li>
+                              <h3 class="titProdSRRDetail">· 주문 취소 안내</h3>
+                              <p class="txtProdSSRDetail">
+                                상품 출고 전인 경우, 주문 결제 완료 된 상품은 [마이페이지 &gt; 주문/배송조회] 에서 직접 주문 취소가 가능합니다.
+                              </p>
+                            </li>
+                            <li>
+                              <h3 class="titProdSRRDetail">· 교환/반품 시 유의사항</h3>
+                              <p class="txtProdSSRDetail">
+                                단순 변심으로 인한 교환/반품을 하실 경우, 구매자 부담 왕복 배송비가 부과됩니다.
+                                <br>
+                                여러 상품을 동시에 교환/반품 하실 경우, ‘온라인 배송 상품’ 또는 ‘매장 배송 상품’ 여부와 상관없이 ‘합포장 발송’을 해주셔야 합니다.
+                                <br>
+                                아래의 경우 교환/반품이 불가합니다.
+                                <span class="dotTxt">
+                                  <span class="dot">*</span>
+                                  <span>최초 배송된 상품의 상태와 다를 시 (세탁, 수선 또는 착용 후 외출하신 경우)</span>
+                                </span>
+                                <span class="dotTxt">
+                                  <span class="dot">*</span>
+                                  <span>외부 냄새가 묻어 있는 경우 (화장품, 향수, 음식 냄새 등)</span>
+                                </span>
+                                <span class="dotTxt">
+                                  <span class="dot">*</span>
+                                  <span>상품의 택과 라벨, 기타 부속품 (신발 박스, 넥타이핀, 단추, 벨트 등)이 분실/훼손 된 경우</span>
+                                </span>
+                              </p>
+                            </li>
+                            <li>
+                              <h3 class="titProdSRRDetail">· 교환 안내</h3>
+                              <p class="txtProdSSRDetail">
+                                <span class="dotTxt">
+                                  <span class="dot">-</span>
+                                  <span>교환 신청은 상품 수령 후 14일 이내 가능합니다. </span>
+                                </span>
+                                <span class="dotTxt">
+                                  <span class="dot">-</span>
+                                  <span>제품 불량으로 인한 교환 시, 동일 상품 교환 접수만 가능합니다.</span>
+                                </span>
+                              </p>
+                              <p class="txtProdSSRDetail">
+                                * 접수방법
+                                <span class="dotTxt">
+                                  <span class="dot">1.</span>
+                                  <span>[마이페이지 &gt; 주문/배송조회] 에서 교환 신청</span>
+                                </span>
+                                <span class="dotTxt">
+                                  <span class="dot">2.</span>
+                                  <span>교환 비용 결제 (교환 배송비가 부과되는 경우, 결제 후 교환 접수)</span>
+                                </span>
+                                <span class="dotTxt">
+                                  <span class="dot">3.</span>
+                                  <span>1~3일 내 택배기사 방문 수거4. 상품 검수 후 교환 상품 배송</span>
+                                </span>
+                              </p>
+                            </li>
+                            <li>
+                              <h3 class="titProdSRRDetail">· 반품 안내</h3>
+                              <p class="txtProdSSRDetail">
+                                <span class="dotTxt">
+                                  <span class="dot">-</span>
+                                  <span>반품 신청은 상품 수령 후 14일 이내 가능합니다.</span>
+                                </span>
+                              </p>
+                              <p class="txtProdSSRDetail">
+                                * 접수방법
+                                <span class="dotTxt">
+                                  <span class="dot">1.</span>
+                                  <span>[마이페이지 &gt; 주문/배송조회] 에서 반품 신청</span>
+                                </span>
+                                <span class="dotTxt">
+                                  <span class="dot">2.</span>
+                                  <span>반품 비용 결제 (반품 배송비가 부과되는 경우, 결제 후 교환 접수)</span>
+                                </span>
+                                <span class="dotTxt">
+                                  <span class="dot">3.</span>
+                                  <span>1~3일 내 택배기사 방문 수거</span>
+                                </span>
+                                <span class="dotTxt">
+                                  <span class="dot">4.</span>
+                                  <span>상품 검수 후 환불 진행</span>
+                                </span>
+                              </p>
+  
+                            </li>
+                            <li>
+                              <h3 class="titProdSRRDetail">· 환불 안내</h3>
+                              <p class="txtProdSSRDetail">
+                                환불은 반품 완료 처리 후, 카드사/은행 사정에 따라 2~5일 정도소요됩니다.
+                              </p>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <script>
+                    $(function () {
+                      $('.listProdSRR .itemProdSRR .itemHead').click(function () {
+                        $(this).parent().toggleClass('on');
+                        return false;
+                      });
+                    })
+                  </script>
+                </div>
+              </div>
+              
+            </div>
           </div>
         </div>
       </div>
@@ -1738,7 +1785,7 @@
           <div class="popBlockBox">
             <p class="txtPop">
               사용자를 차단하시겠습니까?
-              <br/>
+              <br />
               이제 상품페이지에서 상대방의 리뷰를 확인 할 수 없습니다.
             </p>
             <div class="btnPopBox">
@@ -1749,7 +1796,7 @@
         </div>
       </div>
     </div>
-    
+
     <div class="popBox" id="popReport">
       <div class="popMask"></div>
       <div class="popCont popStyle1">
