@@ -854,14 +854,14 @@
             <div class="prodDetailTabBox">
               <div class="tabTitBox">
                 <div class="tabTit">
-                  <a href="#prodInfo" class="btnTab on" data-tab="prodInfo">상품 정보</a>
-                  <a href="#ProdReview" class="btnTab" data-tab="ProdReview">구매 후기 (6)</a>
-                  <a href="#ProdQA" class="btnTab" data-tab="ProdQA">상품 Q&A (3)</a>
-                  <a href="#ProdShipping" class="btnTab" data-tab="ProdShipping">배송/교환/반품</a>
+                  <a href="#" class="btnTab on">상품 정보</a>
+                  <a href="#" class="btnTab">구매 후기 (6)</a>
+                  <a href="#" class="btnTab">상품 Q&A (3)</a>
+                  <a href="#" class="btnTab">배송/교환/반품</a>
                 </div>
               </div>
               <div class="tabContBox">
-                <div id="prodInfo" class="tabCont prodInfo">
+                <div class="tabCont prodInfo on">
                   <div class="prodInfoItem">
                     <h3 class="titProdInfo">상세설명</h3>
                     <p class="txtProdInfo">
@@ -1043,7 +1043,7 @@
                     </table>
                   </div>
                 </div>
-                <div id="ProdReview" class="tabCont ProdReview">
+                <div class="tabCont prodReview">
                   <div class="tipBox">
                     <p class="txtTip">리뷰 작성 시 구매금액의 <span class="colorRed">최대 2% 마일리지</span> 적립</p>
                   </div>
@@ -1247,7 +1247,7 @@
                     <a href="#" class="btnNext">Next</a>
                   </div>
                 </div>
-                <div id="ProdQA" class="tabCont">
+                <div class="tabCont prodQA">
                   <div class="tipBox">
                     <p class="txtTip">· 궁금하신 사항은 무엇이든 문의주세요. 주문/배송/교환/환불/불량 등의 문의는 <span class="colorRed">1:1 문의</span>를 이용해주세요</p>
                   </div>
@@ -1332,9 +1332,8 @@
                   </div>
                   <!--// 등록된 Q&A가 없습니다. -->
                 </div>
-                <div id="ProdShipping" class="tabCont">
-                  <div class="prodShippingBox">
-                    <h3 class="titProdInfo">배송안내</h3>
+                <div class="tabCont prodShippingBox">
+                  <h3 class="titProdInfo">배송안내</h3>
                     <table class="tblStyle2">
                       <tbody>
                         <tr>
@@ -1370,9 +1369,18 @@
                         </tr>
                       </tbody>
                     </table>
-                  </div>
                 </div>
               </div>
+              <script>
+                $(function(){
+                  $('.tabTitBox .tabTit .btnTab').click(function() {
+                    let idx = $(this).index();
+                    $(this).addClass('on').siblings().removeClass('on');
+                    $(this).closest('.tabTitBox').next('.tabContBox').find('.tabCont').eq(idx).addClass('on').siblings().removeClass('on');
+                    return false;
+                  });
+                });
+              </script>
             </div>
           </div>
           <script>

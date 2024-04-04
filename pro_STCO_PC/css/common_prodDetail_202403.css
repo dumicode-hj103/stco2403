@@ -67,7 +67,8 @@
 .prodDetailTabBox .tabTit { display: flex; justify-content: space-around; align-items: center; height:60px; border-top: 1px solid #000; border-bottom: 1px solid #e4e4e4; background: #FFF; } 
 .prodDetailTabBox .tabTit .btnTab { display: flex; justify-content: center; align-items: center; height: 100%; color:#a2a2a2; font-size: 17px; line-height: 19px; font-weight: 400; } 
 .prodDetailTabBox .tabTit .btnTab.on { color:#000; font-weight: 700; } 
-.prodDetailTabBox .tabCont + .tabCont { margin-top: 150px; } 
+.prodDetailTabBox .tabCont {display: none;}
+.prodDetailTabBox .tabCont.on {display: block;}
 .prodDetailTabBox .prodInfo { padding:40px 0; } 
 .prodDetailTabBox .prodInfo .prodInfoItem + .prodInfoItem { margin-top: 90px; } 
 .prodDetailTabBox .prodInfo .titProdInfo { margin-bottom: 10px; color: #000; font-size: 30px; line-height: 32px; font-weight: 700; } 
@@ -91,59 +92,63 @@
 
 .prodDetailTabBox .tipBox { display: flex; justify-content: center; align-items: center; background: #f9f9f9; padding:30px 0; } 
 .prodDetailTabBox .tipBox .txtTip { color: #686868; font-size: 18px; line-height: 20px; font-weight: 400; } 
-.prodDetailTabBox .ProdReview .starLayoutBox { display: flex; align-items: center; margin-top: 70px; } 
-.prodDetailTabBox .ProdReview .starLayoutBox .numBox { flex:0 0 33.33%; text-align: center; } 
-.prodDetailTabBox .ProdReview .starLayoutBox .numBox .num { color: #1c1c1c; font-size: 55px; line-height: 55px; font-weight: 700; } 
-.prodDetailTabBox .ProdReview .starLayoutBox .numBox .starBox { display: flex; justify-content: center; align-items: center; margin-top:12px; } 
-.prodDetailTabBox .ProdReview .starLayoutBox .numBox .starBox .star { display: block; width: 19px; height: 18px; background: url(../images/img_star.png) no-repeat center center/100%; } 
-.prodDetailTabBox .ProdReview .starLayoutBox .numBox .starBox .star + .star { margin-left: 4px; } 
-.prodDetailTabBox .ProdReview .starLayoutBox .numBox .starBox .star.full { background-image: url(../images/img_star_full.png); } 
-.prodDetailTabBox .ProdReview .starLayoutBox .numBox .starBox .star.half { background-image: url(../images/img_star_half.png); } 
-.prodDetailTabBox .ProdReview .starLayoutBox .numBox .txtNum { margin-top: 15px; color: #545454; font-size: 16px; line-height: 18px; font-weight: 400; } 
-.prodDetailTabBox .ProdReview .starLayoutBox .perBox { flex:0 0 33.33%; } 
-.prodDetailTabBox .ProdReview .starLayoutBox .perBox .titType { margin-bottom: 25px; color: #545454; font-size: 18px; line-height: 20px; font-weight: 400; } 
-.prodDetailTabBox .ProdReview .starLayoutBox .perBox .listPer li + li { margin-top: 15px; } 
-.prodDetailTabBox .ProdReview .starLayoutBox .perBox .listPer li { display: flex; align-items: center; } 
-.prodDetailTabBox .ProdReview .starLayoutBox .perBox .listPer li .titPer { flex:none; width: 80px; color: #989898; font-size: 15px; line-height: 15px; font-weight: 400; } 
-.prodDetailTabBox .ProdReview .starLayoutBox .perBox .listPer li .process { position: relative; width: 140px; height:6px; background: #f1f1f1; } 
-.prodDetailTabBox .ProdReview .starLayoutBox .perBox .listPer li .process .val { position: absolute; left:0; top:0; bottom:0; background: #e95026; } 
-.prodDetailTabBox .ProdReview .starLayoutBox .perBox .listPer li .txtPer { width:40px; text-align: right; color:#1c1c1c; font-size: 15px; line-height: 15px; font-weight: 40; } 
-.prodDetailTabBox .ProdReview .imgReviewBox { display: flex; align-items: center; margin-top: 100px; } 
-.prodDetailTabBox .ProdReview .imgReviewBox .btnImgReview { display: block; width:145px; height:160px; border:1px solid #f0f0f0; } 
-.prodDetailTabBox .ProdReview .imgReviewBox .btnImgReview + .btnImgReview { margin-left: 2px; } 
-.prodDetailTabBox .ProdReview .imgReviewBox .btnImgReview.btnImgReviewMore { position: relative; } 
-.prodDetailTabBox .ProdReview .imgReviewBox .btnImgReview.btnImgReviewMore::before { content:''; z-index: 1; position: absolute; left:0; top: 0; right: 0; bottom: 0; background: rgba(0, 0, 0,.7); } 
-.prodDetailTabBox .ProdReview .imgReviewBox .btnImgReview.btnImgReviewMore::after { content:''; z-index: 2; position: absolute; left:0; top: 0; right: 0; bottom: 0; background:url(../images/btn_review_more.png) no-repeat center center/46px; } 
-.prodDetailTabBox .ProdReview .listReview { margin-top: 40px; border-top: 1px solid #545454; } 
-.prodDetailTabBox .ProdReview .listReview li + li { border-top: 1px solid #e1e1e1; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox { position: relative; padding:25px 15px 25px 140px; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .starBox { position: absolute; left:5px; top:25px; display: flex; justify-content: center; align-items: center; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .starBox .star { display: block; width: 19px; height: 18px; background: url(../images/img_star.png) no-repeat center center/100%; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .starBox .star + .star { margin-left: 4px; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .starBox .star.full { background-image: url(../images/img_star_full.png); } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .starBox .star.half { background-image: url(../images/img_star_half.png); } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .reviewInfo .prodOptionBox { display: flex; justify-content: space-between; align-items: center; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .reviewInfo .prodOptionBox .txtProdOption { display: flex; align-items: center; color: #8a8a8a; font-size: 15px; line-height: 17px; font-weight: 400; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .reviewInfo .prodOptionBox .txtProdOption .itemOption + .itemOption { margin-left: 20px; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .reviewInfo .prodOptionBox .userBox { display: flex; align-items: center; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .reviewInfo .prodOptionBox .userBox .name { color: #8a8a8a; font-size: 16px; line-height: 18px; font-weight: 400; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .reviewInfo .prodOptionBox .userBox .date { color: #8a8a8a; font-size: 14px; line-height: 18px; font-weight: 400; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .reviewInfo .tagReviewBox { display: flex; align-items: center; margin-top: 12px; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .reviewInfo .tagReviewBox .tagItem { display: flex; align-items: center; padding:0 15px; border:1px solid #cecece; height:30px; border-radius: 15px; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .reviewInfo .tagReviewBox .tagItem + .tagItem { margin-left: 8px; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .reviewInfo .tagReviewBox .tagItem .titTag { color: #9e9e9e; font-size: 14px; line-height: 16px; font-weight: 400; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .reviewInfo .tagReviewBox .tagItem .txtTag { margin-left: 6px; color: #686868; font-size: 14px; line-height: 16px; font-weight: 400; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .reviewInfo .txtReview { margin-top: 28px; margin-right: 300px; color: #8a8a8a; font-size: 15px; line-height: 28px; font-weight: 400; overflow:hidden; text-overflow:ellipsis; display: -webkit-box; -webkit-line-clamp:5; -webkit-box-orient:vertical; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .layoutToolBox { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .layoutToolBox .toolBox { display: flex; align-items: center; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .layoutToolBox .toolBox .btnTool { color: #bdbdbd; font-size: 14px; line-height: 16px; font-weight: 400; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .layoutToolBox .toolBox .dot { margin:0 10px; color: #bdbdbd; font-size: 14px; line-height: 16px; font-weight: 400; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .layoutToolBox .upDownBox { display: flex; align-items: center; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .layoutToolBox .upDownBox .btnUpDown { display: flex; align-items: center; height:30px; padding:0 20px 0 45px; border-radius: 15px; border:1px solid #cecece; color: #686868; font-size: 12px; line-height: 14px; font-weight: 400; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .layoutToolBox .upDownBox .btnUpDown + .btnUpDown { margin-left: 5px; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .layoutToolBox .upDownBox .btnUpDown.up { background:url(../images/icon_review_up.png) no-repeat 16px center/13px; } 
-.prodDetailTabBox .ProdReview .listReview .reviewInfoBox .layoutToolBox .upDownBox .btnUpDown.down { background:url(../images/icon_review_down.png) no-repeat 16px center/13px; } 
+.prodDetailTabBox .prodReview {padding:40px 0;}
+.prodDetailTabBox .prodReview .starLayoutBox { display: flex; align-items: center; margin-top: 70px; } 
+.prodDetailTabBox .prodReview .starLayoutBox .numBox { flex:0 0 33.33%; text-align: center; } 
+.prodDetailTabBox .prodReview .starLayoutBox .numBox .num { color: #1c1c1c; font-size: 55px; line-height: 55px; font-weight: 700; } 
+.prodDetailTabBox .prodReview .starLayoutBox .numBox .starBox { display: flex; justify-content: center; align-items: center; margin-top:12px; } 
+.prodDetailTabBox .prodReview .starLayoutBox .numBox .starBox .star { display: block; width: 19px; height: 18px; background: url(../images/img_star.png) no-repeat center center/100%; } 
+.prodDetailTabBox .prodReview .starLayoutBox .numBox .starBox .star + .star { margin-left: 4px; } 
+.prodDetailTabBox .prodReview .starLayoutBox .numBox .starBox .star.full { background-image: url(../images/img_star_full.png); } 
+.prodDetailTabBox .prodReview .starLayoutBox .numBox .starBox .star.half { background-image: url(../images/img_star_half.png); } 
+.prodDetailTabBox .prodReview .starLayoutBox .numBox .txtNum { margin-top: 15px; color: #545454; font-size: 16px; line-height: 18px; font-weight: 400; } 
+.prodDetailTabBox .prodReview .starLayoutBox .perBox { flex:0 0 33.33%; } 
+.prodDetailTabBox .prodReview .starLayoutBox .perBox .titType { margin-bottom: 25px; color: #545454; font-size: 18px; line-height: 20px; font-weight: 400; } 
+.prodDetailTabBox .prodReview .starLayoutBox .perBox .listPer li + li { margin-top: 15px; } 
+.prodDetailTabBox .prodReview .starLayoutBox .perBox .listPer li { display: flex; align-items: center; } 
+.prodDetailTabBox .prodReview .starLayoutBox .perBox .listPer li .titPer { flex:none; width: 80px; color: #989898; font-size: 15px; line-height: 15px; font-weight: 400; } 
+.prodDetailTabBox .prodReview .starLayoutBox .perBox .listPer li .process { position: relative; width: 140px; height:6px; background: #f1f1f1; } 
+.prodDetailTabBox .prodReview .starLayoutBox .perBox .listPer li .process .val { position: absolute; left:0; top:0; bottom:0; background: #e95026; } 
+.prodDetailTabBox .prodReview .starLayoutBox .perBox .listPer li .txtPer { width:40px; text-align: right; color:#1c1c1c; font-size: 15px; line-height: 15px; font-weight: 40; } 
+.prodDetailTabBox .prodReview .imgReviewBox { display: flex; align-items: center; margin-top: 100px; } 
+.prodDetailTabBox .prodReview .imgReviewBox .btnImgReview { display: block; width:145px; height:160px; border:1px solid #f0f0f0; } 
+.prodDetailTabBox .prodReview .imgReviewBox .btnImgReview + .btnImgReview { margin-left: 2px; } 
+.prodDetailTabBox .prodReview .imgReviewBox .btnImgReview.btnImgReviewMore { position: relative; } 
+.prodDetailTabBox .prodReview .imgReviewBox .btnImgReview.btnImgReviewMore::before { content:''; z-index: 1; position: absolute; left:0; top: 0; right: 0; bottom: 0; background: rgba(0, 0, 0,.7); } 
+.prodDetailTabBox .prodReview .imgReviewBox .btnImgReview.btnImgReviewMore::after { content:''; z-index: 2; position: absolute; left:0; top: 0; right: 0; bottom: 0; background:url(../images/btn_review_more.png) no-repeat center center/46px; } 
+.prodDetailTabBox .prodReview .listReview { margin-top: 40px; border-top: 1px solid #545454; } 
+.prodDetailTabBox .prodReview .listReview li + li { border-top: 1px solid #e1e1e1; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox { position: relative; padding:25px 15px 25px 140px; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .starBox { position: absolute; left:5px; top:25px; display: flex; justify-content: center; align-items: center; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .starBox .star { display: block; width: 19px; height: 18px; background: url(../images/img_star.png) no-repeat center center/100%; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .starBox .star + .star { margin-left: 4px; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .starBox .star.full { background-image: url(../images/img_star_full.png); } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .starBox .star.half { background-image: url(../images/img_star_half.png); } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .reviewInfo .prodOptionBox { display: flex; justify-content: space-between; align-items: center; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .reviewInfo .prodOptionBox .txtProdOption { display: flex; align-items: center; color: #8a8a8a; font-size: 15px; line-height: 17px; font-weight: 400; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .reviewInfo .prodOptionBox .txtProdOption .itemOption + .itemOption { margin-left: 20px; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .reviewInfo .prodOptionBox .userBox { display: flex; align-items: center; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .reviewInfo .prodOptionBox .userBox .name { color: #8a8a8a; font-size: 16px; line-height: 18px; font-weight: 400; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .reviewInfo .prodOptionBox .userBox .date { color: #8a8a8a; font-size: 14px; line-height: 18px; font-weight: 400; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .reviewInfo .tagReviewBox { display: flex; align-items: center; margin-top: 12px; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .reviewInfo .tagReviewBox .tagItem { display: flex; align-items: center; padding:0 15px; border:1px solid #cecece; height:30px; border-radius: 15px; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .reviewInfo .tagReviewBox .tagItem + .tagItem { margin-left: 8px; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .reviewInfo .tagReviewBox .tagItem .titTag { color: #9e9e9e; font-size: 14px; line-height: 16px; font-weight: 400; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .reviewInfo .tagReviewBox .tagItem .txtTag { margin-left: 6px; color: #686868; font-size: 14px; line-height: 16px; font-weight: 400; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .reviewInfo .txtReview { margin-top: 28px; margin-right: 300px; color: #8a8a8a; font-size: 15px; line-height: 28px; font-weight: 400; overflow:hidden; text-overflow:ellipsis; display: -webkit-box; -webkit-line-clamp:5; -webkit-box-orient:vertical; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .layoutToolBox { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .layoutToolBox .toolBox { display: flex; align-items: center; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .layoutToolBox .toolBox .btnTool { color: #bdbdbd; font-size: 14px; line-height: 16px; font-weight: 400; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .layoutToolBox .toolBox .dot { margin:0 10px; color: #bdbdbd; font-size: 14px; line-height: 16px; font-weight: 400; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .layoutToolBox .upDownBox { display: flex; align-items: center; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .layoutToolBox .upDownBox .btnUpDown { display: flex; align-items: center; height:30px; padding:0 20px 0 45px; border-radius: 15px; border:1px solid #cecece; color: #686868; font-size: 12px; line-height: 14px; font-weight: 400; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .layoutToolBox .upDownBox .btnUpDown + .btnUpDown { margin-left: 5px; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .layoutToolBox .upDownBox .btnUpDown.up { background:url(../images/icon_review_up.png) no-repeat 16px center/13px; } 
+.prodDetailTabBox .prodReview .listReview .reviewInfoBox .layoutToolBox .upDownBox .btnUpDown.down { background:url(../images/icon_review_down.png) no-repeat 16px center/13px; } 
 
+.prodDetailTabBox .prodQA {padding:40px 0;}
+
+.prodDetailTabBox .prodShippingBox {padding:40px 0;}
 .prodDetailTabBox .prodShippingBox .titProdInfo { margin-bottom: 10px; color: #000; font-size: 30px; line-height: 32px; font-weight: 700; } 
 .prodDetailTabBox .prodShippingBox .txtProdInfo { color: #000; font-size: 18px; line-height: 24px; font-weight: 400; } 
 .prodDetailTabBox .prodShippingBox .txtProdInfo + * { margin-top: 50px !important; } 
