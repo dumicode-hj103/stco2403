@@ -13,7 +13,7 @@
 .prodDetailTopWrap .prodOptionBox .priceBox .priceOld + .priceNew { margin-left: 15px; } 
 .prodDetailTopWrap .prodOptionBox .priceBox .priceNew + .pricePer { margin-left: 15px; } 
 .prodDetailTopWrap .prodOptionBox .priceBox .shippingType { position: absolute; top:50%; right:0; padding:0 8px; height: 28px; margin-top: -14px; display: flex; justify-content: center; align-items: center; background: #a5a5a5; color:#FFF; font-size: 12px; line-height: 14px; font-weight: 400; } 
-.prodDetailTopWrap .prodOptionBox .prodIntro { padding:12px; box-shadow: 0 0 0 1px #e9e9e9; color:#000; font-size: 15px; line-height: 18px; font-weight: 700;} 
+.prodDetailTopWrap .prodOptionBox .prodIntro { padding:12px; box-shadow: 0 0 0 1px #000; color:#000; font-size: 15px; line-height: 18px; font-weight: 700;} 
 .prodDetailTopWrap .prodOptionBox .priceBox + .prodIntro { margin-top: 25px; } 
 .prodDetailTopWrap .prodOptionBox .prodInfoBox { position: relative; margin-top: 20px; } 
 .prodDetailTopWrap .prodOptionBox .prodInfoBox .listProdInfo li + li { margin-top: 20px; } 
