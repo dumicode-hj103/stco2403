@@ -9,6 +9,8 @@ $(function () {
       $('body').removeClass('fixedTab');
     }
   });
+
+  $(window).trigger('mousewheel');
 });
 
 
