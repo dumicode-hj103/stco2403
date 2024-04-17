@@ -124,7 +124,7 @@
 .prodDetailTabBox .tabCont.on {display: block;}
 
 .prodDetailTabBox .prodInfo { background: #fafafb; } 
-.prodDetailTabBox .prodInfo .prodInfoItem { background: #FFF; padding:24px 12px; } 
+.prodDetailTabBox .prodInfo .prodInfoItem { background: #FFF; padding:48px 12px; } 
 .prodDetailTabBox .prodInfo .prodInfoItem + .prodInfoItem { margin-top:4px; } 
 .prodDetailTabBox .prodInfo .titProdInfo { margin-bottom: 12px; color: #000; font-size: 16px; line-height: 18px; font-weight: 700; } 
 .prodDetailTabBox .prodInfo .titProdInfo.style2 {font-size: 20px; line-height: 22px; }
