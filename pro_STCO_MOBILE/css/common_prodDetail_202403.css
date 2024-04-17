@@ -54,7 +54,6 @@
 .prodDetailTopWrap .prodOptionBox .priceBox .priceOld + .priceNew { margin-left: 10px; } 
 .prodDetailTopWrap .prodOptionBox .priceBox .priceNew + .pricePer { margin-left: 5px; } 
 .prodDetailTopWrap .prodOptionBox .priceBox .shippingType { position: absolute; top:50%; right:0; padding:0 8px; height: 24px; margin-top: -12px; display: flex; justify-content: center; align-items: center; background: #a5a5a5; color:#FFF; font-size: 12px; line-height: 14px; font-weight: 400; } 
-/* .prodDetailTopWrap .prodOptionBox .prodIntro { padding:12px; box-shadow: 0 0 0 1px #e9e9e9; color:#8f8f8f; font-size: 15px; line-height: 18px; }  */
 .prodDetailTopWrap .prodOptionBox .priceBox + .prodIntro { margin-top: 25px; } 
 
 .prodDetailTopWrap .discountBox { margin-top: 24px; padding:20px 16px; background: #fafafa; text-align: center; } 
@@ -74,7 +73,7 @@
 .discountBoxStyle2 .btnDiscount { display: inline-flex; justify-content: center; align-items: center; height:36px; margin-top: 25px; padding:0 12px; box-shadow: 0 0 0 1px #000; background: url(../images/bg_btn.jpg) repeat-x 0 0/1px 100%; color:#fff; font-size: 15px; line-height: 17px; font-weight: 400; } 
 
 
-.prodDetailTopWrap .prodOptionBox .prodIntro { margin: 16px 0; padding:6px; box-shadow: 0 0 0 1px #a5a5a5; border-radius: 2px; color:#000; font-size: 16px; line-height: 18px; font-weight: 700;} 
+.prodDetailTopWrap .prodOptionBox .prodIntro { margin: 16px 0; padding:6px; box-shadow: 0 0 0 1px #a5a5a5; border-radius: 2px; color:#000; font-size: 16px; line-height: 26px; font-weight: 700;} 
 
 .prodDetailTopWrap .prodOptionBox .prodInfoBox { position: relative; margin:0 -12px; padding:20px 16px; } 
 .prodDetailTopWrap .prodOptionBox .prodInfoBox .listProdInfo li + li { margin-top: 20px; } 
@@ -121,6 +120,8 @@
 .prodDetailTabBox .tabTit .btnTab { display: flex; justify-content: center; align-items: center; height: 100%; color:#b1b1b1; font-size: 13px; line-height: 15px; font-weight: 400; } 
 .prodDetailTabBox .tabTit .btnTab.on { color:#000; font-weight: 700; } 
 .prodDetailTabBox .tabTit .btnTab.on .txt::after { content:''; position: absolute; left:0; bottom:0; right:0; height:2px; background: #000; } 
+.prodDetailTabBox .tabCont {display: none;}
+.prodDetailTabBox .tabCont.on {display: block;}
 
 .prodDetailTabBox .prodInfo { background: #fafafb; } 
 .prodDetailTabBox .prodInfo .prodInfoItem { background: #FFF; padding:24px 12px; } 

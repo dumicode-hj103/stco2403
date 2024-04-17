@@ -16,6 +16,8 @@ $(function () {
 
 function targetClick(obj, target) {
 
+  $('.tabTitBox .tabTit .btnTab:eq(0)').trigger('click');
+  
   var targetOffset = $('#' + target).offset().top;
 
   var headerHeight = headerHeight = $('.header').height() + $('.tabTitBox').outerHeight() 

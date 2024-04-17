@@ -1110,6 +1110,7 @@
                           total += price;
                         });
                         $('.txtTotalPrice').text(total.toLocaleString('ko-KR') + '원');
+                        $('.fixedOptionBoxArea').height(($('.fixedOptionBox').height()));
                       }
                     });
                   </script>
@@ -1164,14 +1165,14 @@
         <div class="prodDetailTabBox">
           <div class="tabTitBox">
             <div class="tabTit">
-              <a href="#prodInfo" class="btnTab on" data-tab="prodInfo"><span class="txt">상품 정보</span></a>
-              <a href="#ProdReview" class="btnTab" data-tab="ProdReview"><span class="txt">구매 후기 (6)</span></a>
-              <a href="#ProdQA" class="btnTab" data-tab="ProdQA"><span class="txt">상품 Q&amp;A (3)</span></a>
-              <a href="#ProdShipping" class="btnTab" data-tab="ProdShipping"><span class="txt">배송/교환/반품</span></a>
+              <a href="#" class="btnTab on"><span class="txt">상품 정보</span></a>
+              <a href="#" class="btnTab"><span class="txt">구매 후기 (6)</span></a>
+              <a href="#" class="btnTab"><span class="txt">상품 Q&amp;A (3)</span></a>
+              <a href="#" class="btnTab"><span class="txt">배송/교환/반품</span></a>
             </div>
           </div>
           <div class="tabContBox">
-            <div id="prodInfo" class="tabCont prodInfo">
+            <div class="tabCont on prodInfo">
               <div class="prodInfoItem">
                 <h3 class="titProdInfo style2">편안하고 세련된 컴포트 블레이저</h3>
                 <p class="txtProdInfo">
@@ -1288,7 +1289,7 @@
                 </ul>
               </div>
             </div>
-            <div id="ProdReview" class="tabCont ProdReview">
+            <div class="tabCont ProdReview">
               <div class="prodReviewBox">
                 <p class="txtReviewMileageNotice">· 리뷰 작성 시 구매금액의 <span class="colorRed">최대 2% 마일리지</span> 적립</p>
 
@@ -1341,21 +1342,17 @@
                           </div>
                           <div class="itemOption">
                             <span class="titOption">사이즈정보</span>
-                            <span class="txtOption">182cm / 82kg</span>
+                            <span class="txtOption">182cm / 82kg / 보통체격</span>
                           </div>
                         </div>
                         <div class="reviewTagBox">
                           <div class="reviewTag">
                             <span class="titReviewTag">사이즈</span>
-                            <span class="txtReviewTag">잘맞아요</span>
+                            <span class="txtReviewTag">딱 맞아요</span>
                           </div>
                           <div class="reviewTag">
-                            <span class="titReviewTag">핏</span>
-                            <span class="txtReviewTag">적당해요</span>
-                          </div>
-                          <div class="reviewTag">
-                            <span class="titReviewTag">착용감</span>
-                            <span class="txtReviewTag">불편해요</span>
+                            <span class="titReviewTag">색상</span>
+                            <span class="txtReviewTag">화면과 같아요</span>
                           </div>
                         </div>
                         <div class="txtReviewBox">
@@ -1400,21 +1397,17 @@
                           </div>
                           <div class="itemOption">
                             <span class="titOption">사이즈정보</span>
-                            <span class="txtOption">178cm / 76kg</span>
+                            <span class="txtOption">178cm / 76kg / 보통체격</span>
                           </div>
                         </div>
                         <div class="reviewTagBox">
                           <div class="reviewTag">
                             <span class="titReviewTag">사이즈</span>
-                            <span class="txtReviewTag">잘맞아요</span>
+                            <span class="txtReviewTag">딱 맞아요</span>
                           </div>
                           <div class="reviewTag">
-                            <span class="titReviewTag">핏</span>
-                            <span class="txtReviewTag">적당해요</span>
-                          </div>
-                          <div class="reviewTag">
-                            <span class="titReviewTag">착용감</span>
-                            <span class="txtReviewTag">불편해요</span>
+                            <span class="titReviewTag">색상</span>
+                            <span class="txtReviewTag">화면과 같아요</span>
                           </div>
                         </div>
                         <div class="txtReviewBox">
@@ -1459,21 +1452,17 @@
                           </div>
                           <div class="itemOption">
                             <span class="titOption">사이즈정보</span>
-                            <span class="txtOption">178cm / 76kg</span>
+                            <span class="txtOption">178cm / 76kg / 보통체격</span>
                           </div>
                         </div>
                         <div class="reviewTagBox">
                           <div class="reviewTag">
                             <span class="titReviewTag">사이즈</span>
-                            <span class="txtReviewTag">잘맞아요</span>
+                            <span class="txtReviewTag">딱 맞아요</span>
                           </div>
                           <div class="reviewTag">
-                            <span class="titReviewTag">핏</span>
-                            <span class="txtReviewTag">적당해요</span>
-                          </div>
-                          <div class="reviewTag">
-                            <span class="titReviewTag">착용감</span>
-                            <span class="txtReviewTag">불편해요</span>
+                            <span class="titReviewTag">색상</span>
+                            <span class="txtReviewTag">화면과 같아요</span>
                           </div>
                         </div>
                         <div class="swiperBox swiperProdReview">
@@ -1550,7 +1539,7 @@
                 </div>
               </div>
             </div>
-            <div id="ProdQA" class="tabCont ProdQA">
+            <div class="tabCont ProdQA">
               <div class="prodDetailQaBox">
                 <div class="prodQaNoticeOuter">
                   <div class="prodQaNoticeBox">
@@ -1608,7 +1597,7 @@
                 </a>
               </div>
             </div>
-            <div id="ProdShipping" class="tabCont ProdShipping">
+            <div class="tabCont ProdShipping">
               <div class="prodShippingBox">
                 <div class="prodShippingItem">
                   <h3 class="titProdInfo">배송 / 교환 / 반품</h3>
@@ -1768,6 +1757,16 @@
               
             </div>
           </div>
+          <script>
+            $(function(){
+              $('.tabTitBox .tabTit .btnTab').click(function() {
+                let idx = $(this).index();
+                $(this).addClass('on').siblings().removeClass('on');
+                $(this).closest('.tabTitBox').next('.tabContBox').find('.tabCont').eq(idx).addClass('on').siblings().removeClass('on');
+                return false;
+              });
+            });
+          </script>
         </div>
       </div>
       <!-- =============================  // dumicode 202403 ========================================= -->
@@ -1890,21 +1889,17 @@
               </div>
               <div class="itemOption">
                 <span class="titOption">사이즈정보</span>
-                <span class="txtOption">178cm / 76kg</span>
+                <span class="txtOption">178cm / 76kg / 보통체격</span>
               </div>
             </div>
             <div class="reviewTagBox">
               <div class="reviewTag">
                 <span class="titReviewTag">사이즈</span>
-                <span class="txtReviewTag">잘맞아요</span>
+                <span class="txtReviewTag">딱 맞아요</span>
               </div>
               <div class="reviewTag">
-                <span class="titReviewTag">핏</span>
-                <span class="txtReviewTag">적당해요</span>
-              </div>
-              <div class="reviewTag">
-                <span class="titReviewTag">착용감</span>
-                <span class="txtReviewTag">불편해요</span>
+                <span class="titReviewTag">색상</span>
+                <span class="txtReviewTag">화면과 같아요</span>
               </div>
             </div>
             <div class="swiperBox swiperProdReview">
@@ -1982,21 +1977,17 @@
               </div>
               <div class="itemOption">
                 <span class="titOption">사이즈정보</span>
-                <span class="txtOption">178cm / 76kg</span>
+                <span class="txtOption">178cm / 76kg / 보통체격</span>
               </div>
             </div>
             <div class="reviewTagBox">
               <div class="reviewTag">
                 <span class="titReviewTag">사이즈</span>
-                <span class="txtReviewTag">잘맞아요</span>
+                <span class="txtReviewTag">딱 맞아요</span>
               </div>
               <div class="reviewTag">
-                <span class="titReviewTag">핏</span>
-                <span class="txtReviewTag">적당해요</span>
-              </div>
-              <div class="reviewTag">
-                <span class="titReviewTag">착용감</span>
-                <span class="txtReviewTag">불편해요</span>
+                <span class="titReviewTag">색상</span>
+                <span class="txtReviewTag">화면과 같아요</span>
               </div>
             </div>
             <div class="swiperBox swiperProdReview">

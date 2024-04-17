@@ -41,65 +41,67 @@ $(function () {
     }
   });
 
-  $(window).scroll(function () {
+//   $(window).scroll(function () {
 
-    var headerHeight = 0;
+//     var headerHeight = 0;
 
-    if (currentDirection == scrollDirection.UP) {
-      headerHeight = $('.tabTitBox').height() + $('.stco_header').outerHeight() + $('.gnb_nav2').outerHeight()
-    } else if (currentDirection == scrollDirection.DOWN) {
-      headerHeight = $('.tabTitBox').height() + $('.gnb_nav2').outerHeight()
-    }
-    var topOfScreen = $(window).scrollTop() + headerHeight;
-    var bottomOfScreen = topOfScreen + $(window).height();
+//     if (currentDirection == scrollDirection.UP) {
+//       headerHeight = $('.tabTitBox').height() + $('.stco_header').outerHeight() + $('.gnb_nav2').outerHeight()
+//     } else if (currentDirection == scrollDirection.DOWN) {
+//       headerHeight = $('.tabTitBox').height() + $('.gnb_nav2').outerHeight()
+//     }
+//     var topOfScreen = $(window).scrollTop() + headerHeight;
+//     var bottomOfScreen = topOfScreen + $(window).height();
 
-    $('.tabCont').each(function () {
-      var $tabCont = $(this);
-      var topOfElement = $tabCont.offset().top;
-      var bottomOfElement = topOfElement + $tabCont.outerHeight();
+//     $('.tabCont').each(function () {
+//       var $tabCont = $(this);
+//       var topOfElement = $tabCont.offset().top;
+//       var bottomOfElement = topOfElement + $tabCont.outerHeight();
 
-      var inViewport = (bottomOfScreen > topOfElement) && (topOfScreen < bottomOfElement);
+//       var inViewport = (bottomOfScreen > topOfElement) && (topOfScreen < bottomOfElement);
 
-      if (inViewport) {
-        var tabId = $tabCont.attr('id');
-        $('.btnTab').removeClass('on');
-        $('.btnTab[data-tab="' + tabId + '"]').addClass('on');
-        return false;
-      }
-    });
-  });
+//       if (inViewport) {
+//         var tabId = $tabCont.attr('id');
+//         $('.btnTab').removeClass('on');
+//         $('.btnTab[data-tab="' + tabId + '"]').addClass('on');
+//         return false;
+//       }
+//     });
+//   });
 
 
 
-  $('.btnTab').on('click', function (e) {
-    e.preventDefault();
+//   $('.btnTab').on('click', function (e) {
+//     e.preventDefault();
 
-    var targetTabId = $(this).data('tab');
+//     var targetTabId = $(this).data('tab');
 
-    if (targetTabId) {
+//     if (targetTabId) {
 
-      var targetOffset = $('#' + targetTabId).offset().top;
-      var buttonOffset = $(this).offset().top;
+//       var targetOffset = $('#' + targetTabId).offset().top;
+//       var buttonOffset = $(this).offset().top;
 
-      var headerHeight = 0;
-      if (targetOffset < buttonOffset) {
-        headerHeight = $('.tabTitBox').height() + $('.stco_header').outerHeight() + $('.gnb_nav2').outerHeight()
-      } else {
-        headerHeight = $('.tabTitBox').height() + $('.gnb_nav2').outerHeight()
-      }
+//       var headerHeight = 0;
+//       if (targetOffset < buttonOffset) {
+//         headerHeight = $('.tabTitBox').height() + $('.stco_header').outerHeight() + $('.gnb_nav2').outerHeight()
+//       } else {
+//         headerHeight = $('.tabTitBox').height() + $('.gnb_nav2').outerHeight()
+//       }
 
-      targetOffset -= headerHeight - 2;
+//       targetOffset -= headerHeight - 2;
 
-      $('html, body').animate({
-        scrollTop: targetOffset
-      });
-    }
-  });
+//       $('html, body').animate({
+//         scrollTop: targetOffset
+//       });
+//     }
+//   });
 
 
 });
 
 function targetClick(obj,target) {
+  
+  $('.tabTitBox .tabTit .btnTab:eq(0)').trigger('click');
 
   var targetOffset = $('#' + target).offset().top;
   var buttonOffset = $(obj).offset().top;
