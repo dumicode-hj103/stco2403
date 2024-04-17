@@ -1165,14 +1165,14 @@
         <div class="prodDetailTabBox">
           <div class="tabTitBox">
             <div class="tabTit">
-              <a href="#" class="btnTab on"><span class="txt">상품 정보</span></a>
-              <a href="#" class="btnTab"><span class="txt">구매 후기 (6)</span></a>
-              <a href="#" class="btnTab"><span class="txt">상품 Q&amp;A (3)</span></a>
-              <a href="#" class="btnTab"><span class="txt">배송/교환/반품</span></a>
+              <a href="#prodInfo" data-tab="prodInfo" class="btnTab on">상품 정보</a>
+              <a href="#prodReview" data-tab="prodReview" class="btnTab">구매 후기 (6)</a>
+              <a href="#prodQA" data-tab="prodQA" class="btnTab">상품 Q&A (3)</a>
+              <a href="#prodShipping" data-tab="prodShipping" class="btnTab">배송/교환/반품</a>
             </div>
           </div>
           <div class="tabContBox">
-            <div class="tabCont on prodInfo">
+            <div id="prodInfo" class="tabCont on prodInfo">
               <div class="prodInfoItem">
                 <h3 class="titProdInfo style2">편안하고 세련된 컴포트 블레이저</h3>
                 <p class="txtProdInfo">
@@ -1289,7 +1289,7 @@
                 </ul>
               </div>
             </div>
-            <div class="tabCont ProdReview">
+            <div id="prodReview" class="tabCont ProdReview">
               <div class="prodReviewBox">
                 <p class="txtReviewMileageNotice">· 리뷰 작성 시 구매금액의 <span class="colorRed">최대 2% 마일리지</span> 적립</p>
 
@@ -1539,7 +1539,7 @@
                 </div>
               </div>
             </div>
-            <div class="tabCont ProdQA">
+            <div id="prodQA" class="tabCont ProdQA">
               <div class="prodDetailQaBox">
                 <div class="prodQaNoticeOuter">
                   <div class="prodQaNoticeBox">
@@ -1597,7 +1597,7 @@
                 </a>
               </div>
             </div>
-            <div class="tabCont ProdShipping">
+            <div id="prodShipping" class="tabCont ProdShipping">
               <div class="prodShippingBox">
                 <div class="prodShippingItem">
                   <h3 class="titProdInfo">배송 / 교환 / 반품</h3>
@@ -1763,7 +1763,30 @@
                 let idx = $(this).index();
                 $(this).addClass('on').siblings().removeClass('on');
                 $(this).closest('.tabTitBox').next('.tabContBox').find('.tabCont').eq(idx).addClass('on').siblings().removeClass('on');
-                return false;
+
+                var targetTabId = $(this).data('tab');
+
+                if (targetTabId) {
+
+                  var targetOffset = $('#' + targetTabId).offset().top;
+                  var buttonOffset = $(this).offset().top;
+
+                  console.log(targetOffset, buttonOffset);
+
+                  var headerHeight = 0;
+                  if (targetOffset < buttonOffset) {
+                    headerHeight = $('.tabTitBox').height() + $('.gnb_nav2').outerHeight()
+                  } else {
+                    headerHeight = $('.tabTitBox').height() + $('.stco_header').outerHeight() + $('.gnb_nav2').outerHeight()
+                  }
+
+                  targetOffset -= headerHeight - 2;
+
+                  $('html, body').animate({
+                    scrollTop: targetOffset
+                  });
+                  return false;
+                }
               });
             });
           </script>
