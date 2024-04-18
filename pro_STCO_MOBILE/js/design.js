@@ -25,7 +25,8 @@ $(function () {
 
   $(window).scroll(function () {
     var scrollTop = $(window).scrollTop();
-    var tabPosY = $('.prodDetailTabBox .tabTitBox').offset().top;
+    var tabPosY = $('.tabTitBox').offset().top;
+
     var headerHeight = 0;
 
     if (currentDirection == scrollDirection.UP) {
@@ -34,73 +35,41 @@ $(function () {
       headerHeight = $('.gnb_nav2').outerHeight()
     }
 
-    if (scrollTop >= tabPosY - headerHeight) {
+    if (scrollTop > tabPosY - headerHeight) {
       $('body').addClass('fixedTab');
     } else {
       $('body').removeClass('fixedTab');
     }
   });
 
-//   $(window).scroll(function () {
 
-//     var headerHeight = 0;
+  $('.tabTitBox .tabTit .btnTab').click(function () {
+    let idx = $(this).index();
+    $(this).addClass('on').siblings().removeClass('on');
+    $(this).closest('.tabTitBox').next('.tabContBox').find('.tabCont').eq(idx).addClass('on').siblings().removeClass('on');
 
-//     if (currentDirection == scrollDirection.UP) {
-//       headerHeight = $('.tabTitBox').height() + $('.stco_header').outerHeight() + $('.gnb_nav2').outerHeight()
-//     } else if (currentDirection == scrollDirection.DOWN) {
-//       headerHeight = $('.tabTitBox').height() + $('.gnb_nav2').outerHeight()
-//     }
-//     var topOfScreen = $(window).scrollTop() + headerHeight;
-//     var bottomOfScreen = topOfScreen + $(window).height();
+    var tabTitTop = $('.tabTit').offset().top;
+    var tabContTop = $('.tabContBox').offset().top;
 
-//     $('.tabCont').each(function () {
-//       var $tabCont = $(this);
-//       var topOfElement = $tabCont.offset().top;
-//       var bottomOfElement = topOfElement + $tabCont.outerHeight();
+    var headerHeight = 0;
 
-//       var inViewport = (bottomOfScreen > topOfElement) && (topOfScreen < bottomOfElement);
+    if (tabTitTop > tabContTop) {
+      headerHeight = $('.tabTitBox').outerHeight() + $('.gnb_nav2').outerHeight() + $('.stco_header').outerHeight();
+    } else {
+      headerHeight = $('.tabTitBox').outerHeight() + $('.gnb_nav2').outerHeight();
+    }
 
-//       if (inViewport) {
-//         var tabId = $tabCont.attr('id');
-//         $('.btnTab').removeClass('on');
-//         $('.btnTab[data-tab="' + tabId + '"]').addClass('on');
-//         return false;
-//       }
-//     });
-//   });
+    scrollTarget = tabContTop - headerHeight;
 
-
-
-//   $('.btnTab').on('click', function (e) {
-//     e.preventDefault();
-
-//     var targetTabId = $(this).data('tab');
-
-//     if (targetTabId) {
-
-//       var targetOffset = $('#' + targetTabId).offset().top;
-//       var buttonOffset = $(this).offset().top;
-
-//       var headerHeight = 0;
-//       if (targetOffset < buttonOffset) {
-//         headerHeight = $('.tabTitBox').height() + $('.stco_header').outerHeight() + $('.gnb_nav2').outerHeight()
-//       } else {
-//         headerHeight = $('.tabTitBox').height() + $('.gnb_nav2').outerHeight()
-//       }
-
-//       targetOffset -= headerHeight - 2;
-
-//       $('html, body').animate({
-//         scrollTop: targetOffset
-//       });
-//     }
-//   });
-
-
+    $('html, body').animate({
+      scrollTop: scrollTarget
+    }, 300);
+    return false;
+  });
 });
 
-function targetClick(obj,target) {
-  
+function targetClick(obj, target) {
+
   $('.tabTitBox .tabTit .btnTab:eq(0)').trigger('click');
 
   var targetOffset = $('#' + target).offset().top;

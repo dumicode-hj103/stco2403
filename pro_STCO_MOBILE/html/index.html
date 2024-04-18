@@ -1110,7 +1110,7 @@
                           total += price;
                         });
                         $('.txtTotalPrice').text(total.toLocaleString('ko-KR') + '원');
-                        $('.fixedOptionBoxArea').height(($('.fixedOptionBox').height()));
+                        $('.fixedOptionBoxArea').height(($('.fixedOptionBox').outerHeight()));
                       }
                     });
                   </script>
@@ -1128,18 +1128,18 @@
 
             <script>
               $(function(){
-                var posBtnOptionBox = $('.btnOptionBox').offset().top;
-                $('.fixedOptionBoxArea').height(($('.fixedOptionBox').height()));
-
+                
+                $('.fixedOptionBoxArea').height(($('.fixedOptionBox').outerHeight()));
                 $('.fixedOptionMask').click(function(){
                   $('body').removeClass('openFixedOption');
                 });
                 
                 $(window).scroll(function(){
-                  var headerHeight = $('.header').outerHeight();
-                  var topOfScreen = $(window).scrollTop() - headerHeight;
+                  var posBtnOptionBox = $('.fixedOptionBoxArea').offset().top + $('.fixedOptionBoxArea').outerHeight();
+                  var headerHeight = $('.gnb_nav2').outerHeight();
+                  var topOfScreen = $(window).scrollTop();
 
-                  if(topOfScreen > posBtnOptionBox){
+                  if(topOfScreen + headerHeight > posBtnOptionBox){
                     $('body').addClass('openFixedBuy');
                   }else{
                     $('body').removeClass('openFixedBuy');
@@ -1759,35 +1759,7 @@
           </div>
           <script>
             $(function(){
-              $('.tabTitBox .tabTit .btnTab').click(function() {
-                let idx = $(this).index();
-                $(this).addClass('on').siblings().removeClass('on');
-                $(this).closest('.tabTitBox').next('.tabContBox').find('.tabCont').eq(idx).addClass('on').siblings().removeClass('on');
-
-                var targetTabId = $(this).data('tab');
-
-                if (targetTabId) {
-
-                  var targetOffset = $('#' + targetTabId).offset().top;
-                  var buttonOffset = $(this).offset().top;
-
-                  console.log(targetOffset, buttonOffset);
-
-                  var headerHeight = 0;
-                  if (targetOffset < buttonOffset) {
-                    headerHeight = $('.tabTitBox').height() + $('.gnb_nav2').outerHeight()
-                  } else {
-                    headerHeight = $('.tabTitBox').height() + $('.stco_header').outerHeight() + $('.gnb_nav2').outerHeight()
-                  }
-
-                  targetOffset -= headerHeight - 2;
-
-                  $('html, body').animate({
-                    scrollTop: targetOffset
-                  });
-                  return false;
-                }
-              });
+              
             });
           </script>
         </div>

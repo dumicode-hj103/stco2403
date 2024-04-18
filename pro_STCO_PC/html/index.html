@@ -1372,21 +1372,14 @@
                     $(this).addClass('on').siblings().removeClass('on');
                     $(this).closest('.tabTitBox').next('.tabContBox').find('.tabCont').eq(idx).addClass('on').siblings().removeClass('on');
 
-                    var targetTabId = $(this).data('tab');
+                    var tabTitBox = $('.tabTitBox').offset().top;
+                    var tabContBox = $('.tabContBox').offset().top;
 
-                    if (targetTabId) {
+                    scrollTarget = tabTitBox  - $('.tabTitBox').outerHeight() ;
 
-                      var targetOffset = $('#' + targetTabId).offset().top;
-                      var buttonOffset = $(this).offset().top;
-
-                      var headerHeight = $('.tabTitBox').outerHeight() + $('.header').outerHeight();
-
-                      targetOffset -= headerHeight - 2;
-
-                      $('html, body').animate({
-                        scrollTop: targetOffset
-                      });
-                    }
+                    $('html, body').animate({
+                      scrollTop: scrollTarget
+                    }, 300);
 
                     return false;
                   });
